@@ -11,7 +11,7 @@ namespace Grammophone.Queueing.Azure
 	{
 		#region Private fields
 
-		private readonly QueueClientOptions underlyingQueueClientOptions;;
+		private readonly QueueClientOptions underlyingQueueClientOptions;
 
 		#endregion
 
