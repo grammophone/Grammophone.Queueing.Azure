@@ -60,7 +60,7 @@ namespace Grammophone.Queueing.Azure
 			=> underlyingClient.SendMessageAsync(data, TimeSpan.Zero, this.TimeToLive, cancellationToken);
 
 		/// <inheritdoc/>
-		public async Task<IQueuedMessage?> TryReceiveMessage(CancellationToken cancellationToken = default)
+		public async Task<IQueuedMessage?> TryReceiveMessageAsync(CancellationToken cancellationToken = default)
 		{
 			var underlyingMessageResponse = await underlyingClient.ReceiveMessageAsync(this.VisibilityTimeout, cancellationToken);
 
