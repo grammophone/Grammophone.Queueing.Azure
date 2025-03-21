@@ -42,6 +42,9 @@ namespace Grammophone.Queueing.Azure
 		public BinaryData Body => underlyingMessage.Body;
 
 		/// <inheritdoc/>
+		public DateTime IssueTime => underlyingMessage.InsertedOn?.UtcDateTime ?? DateTime.UtcNow;
+
+		/// <inheritdoc/>
 		public async Task<bool> TryAbandonAsync(CancellationToken cancellationToken = default)
 		{
 			try
